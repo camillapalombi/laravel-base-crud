@@ -1,4 +1,8 @@
-ciao sono l'index
+@extends('templates.base')
+
+@section('pageTitle', 'Comics Listing')
+
+@section('pageMain')
 
 @foreach ($comics as $comic)
                 <div class="single-card">
@@ -7,4 +11,8 @@ ciao sono l'index
                         <li> {{ $comic->description }}</li> 
                     </ul>
                 </div>
-            @endforeach
+@endforeach
+
+{{ $comics->links() }}
+@endsection
+

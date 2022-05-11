@@ -14,13 +14,13 @@ class PageController extends Controller
      */
     public function index()
     {
-        $myComics = Comic::all();
+        $myComics = Comic::paginate(4);
             
         $data = [
             'comics' => $myComics
         ];
     
-        return view('index', $data);
+        return view('comics.index', $data);
     }
 
     /**
