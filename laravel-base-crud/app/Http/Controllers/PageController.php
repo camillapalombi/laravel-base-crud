@@ -30,7 +30,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -41,7 +41,11 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+
+        $newComic = Comic::create($formData);
+ 
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -50,9 +54,12 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        return view('comics.show', [
+            'pageTitle' => $comic->title,
+            'comic'     => $comic,
+        ]);
     }
 
     /**

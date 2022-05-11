@@ -12185,3 +12185,48 @@ fieldset:disabled .btn {
   text-decoration: none;
 }
 
+.navbar-brand {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+footer {
+  background-color: rgb(221, 221, 221);
+}
+
+.footer-top {
+  width: 100%;
+  height: 24rem;
+  margin-top: 35px;
+}
+
+.footer-top .footer-container-top {
+  position: relative;
+}
+
+.footer-top .footer-container-top .footer-links-container {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dc-comics-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  line-height: 1.7em;
+  margin-right: 10px;
+}
+
+.dc-comics-links a {
+  text-decoration: none;
+  color: grey;
+}
+
+.title-links {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
