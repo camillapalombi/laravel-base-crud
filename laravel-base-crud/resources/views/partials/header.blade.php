@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('comics.index') }}">Listing</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('comics.index') }}">LITSTING</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('comics.create') }}">Create Listing</a>
+                <a class="nav-link active" href="{{ route('comics.create') }}">CREATE LISTING</a>
             </li>
             </ul>
             <form class="d-flex">

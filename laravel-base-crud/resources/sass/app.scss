@@ -1,6 +1,7 @@
 //
 @import "~bootstrap/scss/bootstrap";
 
+//MAIN:
 .card {
     padding: 20px;
 }
@@ -10,12 +11,18 @@
 .title-link {
     text-decoration: none;
 }
+.container {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
 
 //HEADER:
 .navbar-brand {
     font-weight: bold;
     font-size: 25px;
 }
+
 
 //FOOTER:
 
@@ -52,4 +59,9 @@ footer {
     color: black;
     font-size: 18px;
     font-weight: bold;
+  }
+
+  footer .container {
+      margin-top: 0;
+      margin-bottom: 0;
   }

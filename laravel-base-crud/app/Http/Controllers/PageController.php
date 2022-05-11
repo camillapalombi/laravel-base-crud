@@ -45,7 +45,7 @@ class PageController extends Controller
 
         $newComic = Comic::create($formData);
  
-        return redirect()->route('comics.show', $newComic->id);
+        return redirect()->route('comics.index', $newComic->id);
     }
 
     /**
