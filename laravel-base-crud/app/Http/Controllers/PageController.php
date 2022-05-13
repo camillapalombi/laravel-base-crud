@@ -41,6 +41,18 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            
+            'thumb' => 'url|max:250',
+            'title' => 'required|unique:comics|max:70|min:2',
+            'description' => 'required|max:800|min:20',
+            'price' => 'numeric',
+            'series' => 'max:200|min:2',
+            'date' => 'date',
+            'type' => 'max:100|min:2'
+
+        ]);
+
         $formData = $request->all();
 
         $newComic = Comic::create($formData);
