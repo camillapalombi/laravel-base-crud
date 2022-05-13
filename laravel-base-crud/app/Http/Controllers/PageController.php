@@ -7,6 +7,17 @@ use App\Comic;
 
 class PageController extends Controller
 {
+
+    protected $validationParameters = [
+            'thumb' => 'url|max:250',
+            'title' => 'required|unique:comics|max:70|min:2',
+            'description' => 'required|max:800|min:20',
+            'price' => 'numeric',
+            'series' => 'max:200|min:2',
+            'date' => 'date',
+            'type' => 'max:100|min:2'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -41,16 +52,11 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            
-            'thumb' => 'url|max:250',
-            'title' => 'required|unique:comics|max:70|min:2',
-            'description' => 'required|max:800|min:20',
-            'price' => 'numeric',
-            'series' => 'max:200|min:2',
-            'date' => 'date',
-            'type' => 'max:100|min:2'
 
+        // VALIDAZIONE DATI DEL FORM: 
+
+        $request->validate($this->validationParameters, [
+            'thumb.url' => 'Enter a valid URL'
         ]);
 
         $formData = $request->all();
@@ -94,6 +100,8 @@ class PageController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate($this->validationParameters);
+
         $data = $request->all();
         $comic->update($data);
         return redirect()->route('comics.show', $comic->id);
