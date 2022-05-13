@@ -21,6 +21,8 @@
                 <div><h5>Serie:</h5> {{ $comic->series }}</div>
                 <div><h5>Data:</h5> {{ $comic->date }}</div>
                 <div><h5>Tipo:</h5> {{ $comic->type }}</div>
+
+                <a class="btn btn-primary mt-3" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
                 
             </div>
 

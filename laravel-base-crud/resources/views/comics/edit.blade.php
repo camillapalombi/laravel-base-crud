@@ -46,9 +46,12 @@
                         <textarea class="form-control" id="description" rows="3" name="description"> {{ $comic->description }} </textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
 
                 </form>
+
+                <a class="btn btn-success mt-2" href="{{ url()->previous() }}" role="button">Back</a>
+
             </div>
         </div>
     </div>
