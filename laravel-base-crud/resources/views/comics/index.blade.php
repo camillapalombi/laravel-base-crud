@@ -23,6 +23,12 @@
                 <div><h5>Tipo:</h5> {{ $comic->type }}</div>
 
                 <a class="btn btn-primary mt-3" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
+
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger mt-3">Delete</button>
+                </form>
                 
             </div>
 
