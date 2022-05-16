@@ -24,11 +24,7 @@
 
                 <a class="btn btn-primary mt-3" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
 
-                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger mt-3">Delete</button>
-                </form>
+                <button class="btn btn-danger btn-delete" data-id="{{ $comic->id }}">Delete</button>
                 
             </div>
 
@@ -42,6 +38,21 @@
 
 <!--PAGINAZIONE -->
 {{ $comics->links() }}
+
+
+<section id="delete-confirm" class="d-none">
+    <div class="pop-up">
+        <h3>Sei sicuro di voler eliminare?</h3>
+        <div class="d-flex justify-content-center">
+            <button id="btn-no" class="btn btn-success me-3">NO</button>
+            <form method="POST" data-base="{{ route('comics.index') }}">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger">SI</button>
+            </form>
+        </div>
+    </div>
+</section>
 
 
 @endsection
