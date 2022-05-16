@@ -56,7 +56,7 @@ class PageController extends Controller
         // VALIDAZIONE DATI DEL FORM: 
 
         $request->validate($this->validationParameters, [
-            'thumb.url' => 'Enter a valid URL'
+            'thumb.url' => 'Inserisci URL valido'
         ]);
 
         $formData = $request->all();
