@@ -116,6 +116,7 @@ class PageController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return redirect()->route('comics.index');
+        // return redirect()->route('comics.index');
+        return back(); //dopo il delete dell'elemento, rimaniamo nella pagina in cui eravamo!
     }
 }
