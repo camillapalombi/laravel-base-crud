@@ -4,6 +4,12 @@
 //MAIN:
 .card {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btn-edit-delete {
+  margin-top: 20px;
 }
 .comics-thumbs {
     width: 250px;

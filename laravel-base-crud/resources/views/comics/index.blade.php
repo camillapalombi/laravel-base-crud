@@ -14,17 +14,21 @@
 
             <div class="card h-100">
 
-                <img class="comics-thumbs" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
-                <h3> <a class="title-link" href="{{ route('comics.show', $comic->id) }}">{{ $comic->title }}</a> </h3>
-                <div>{{ $comic->description }}</div>
-                <div> <h5>Prezzo:</h5> {{ $comic->price }}$ </div>
-                <div><h5>Serie:</h5> {{ $comic->series }}</div>
-                <div><h5>Data:</h5> {{ $comic->date }}</div>
-                <div><h5>Tipo:</h5> {{ $comic->type }}</div>
+                <div>
+                    <img class="comics-thumbs" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                    <h3> <a class="title-link" href="{{ route('comics.show', $comic->id) }}">{{ $comic->title }}</a> </h3>
+                    <div>{{ $comic->description }}</div>
+                    <div> <h5>Prezzo:</h5> {{ $comic->price }}$ </div>
+                    <div><h5>Serie:</h5> {{ $comic->series }}</div>
+                    <div><h5>Data:</h5> {{ $comic->date }}</div>
+                    <div><h5>Tipo:</h5> {{ $comic->type }}</div>
+                </div>
 
-                <a class="btn btn-primary mt-3" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
+                <div class="btn-edit-delete">
+                    <a class="btn btn-primary" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
 
-                <button class="btn btn-danger btn-delete" data-id="{{ $comic->id }}">Delete</button>
+                    <button class="btn btn-danger btn-delete" data-id="{{ $comic->id }}">Delete</button>
+                </div>
                 
             </div>
 

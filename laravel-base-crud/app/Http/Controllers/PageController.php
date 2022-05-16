@@ -25,7 +25,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $myComics = Comic::paginate(4);
+        $myComics = Comic::paginate(6);
             
         $data = [
             'comics' => $myComics
